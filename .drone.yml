@@ -10,5 +10,7 @@ steps:
   - go test
 
 trigger:
-  branch:
-  - master
+  ref:
+  - refs/heads/master
+  - refs/heads/**
+  - refs/pull/*/head
