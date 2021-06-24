@@ -1,13 +1,7 @@
-pipeline:
-  build:
-    image: golang
-    commands:
-      - go build
-      - go test
+kind: pipeline
+type: docker
+name: default
 
 services:
-  database:
-    image: mysql
-
-  cache:
-    image: redis
+- name: cache
+  image: redis
