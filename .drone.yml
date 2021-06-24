@@ -8,5 +8,3 @@ steps:
 
 - name: ping
   image: redis
-  commands:
-  - redis-cli -h cache ping
