@@ -1,13 +1,13 @@
-kind: pipeline
-type: kubernetes
-name: default
+pipeline:
+  build:
+    image: golang
+    commands:
+      - go build
+      - go test
 
-metadata:
-  namespace: default
+services:
+  database:
+    image: mysql
 
-steps:
-- name: build
-  image: golang
-  commands:
-  - go build
-  - go test
+  cache:
+    image: redis
