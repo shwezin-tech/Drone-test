@@ -1,7 +1,13 @@
 kind: pipeline
-type: docker
+type: kubernetes
 name: default
 
-services:
-- name: cache
-  image: redis
+metadata:
+  namespace: default
+
+steps:
+- name: build
+  image: golang
+  commands:
+  - go build
+  - go test
