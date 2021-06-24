@@ -12,4 +12,4 @@ steps:
 
 trigger:
   branch:
-  - branch1
+  - branch-1
