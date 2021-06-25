@@ -2,10 +2,6 @@ kind: pipeline
 type: docker
 name: default
 
-steps:
+services:
 - name: cache
-  image: redis
-  detach: true
-
-- name: ping
   image: redis
