@@ -5,8 +5,8 @@ name: default
 steps:
   - name: ping
     image: redis
-    commands:
-    - redis-cli -h cache ping
+    detach: true
+
 
 services:
   - name: cache
