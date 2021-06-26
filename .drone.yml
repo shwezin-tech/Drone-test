@@ -1,8 +1,12 @@
 kind: pipeline
-type: docker
 name: default
 
 steps:
-- name: build
-  pull: never
-  image: golang:1.12
+- name: cache
+  image: redis
+  detach: true
+
+- name: ping
+  image: redis
+  commands:
+  - redis-cli -h cache ping
