@@ -20,7 +20,3 @@ steps:
   depends_on:
   - first
   - second
-
-node:
-  keyA: valueA
-  keyB: valueB
