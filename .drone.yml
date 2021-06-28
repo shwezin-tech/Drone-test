@@ -11,6 +11,6 @@ steps:
       - flake8
     
 when:
-    branch:
-      only:
-        - branch
+  event:
+    include:
+    - push
