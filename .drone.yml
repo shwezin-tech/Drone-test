@@ -11,3 +11,8 @@ steps:
 services:
   - name: cache
     image: redis
+    
+when:
+    branch:
+      only:
+        - main
