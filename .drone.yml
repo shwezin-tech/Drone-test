@@ -13,4 +13,4 @@ steps:
 when:
     branch:
       only:
-        - branch 1
+        - main
