@@ -9,3 +9,8 @@ steps:
     commands:
       - python -m pip install -r requirements.txt
       - flake8
+      
+when:
+  event:
+    include:
+    - push
