@@ -1,16 +1,14 @@
+---
 kind: pipeline
 type: docker
 name: default
 
 steps:
-  - name: ping
-    image: redis
+  - name: lint
+    image: python:3.7-alpine
     commands:
-    - redis-cli -h cache ping
-
-services:
-  - name: cache
-    image: redis
+      - python -m pip install -r requirements.txt
+      - flake8
     
 when:
     branch:
