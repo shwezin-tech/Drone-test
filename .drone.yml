@@ -12,7 +12,7 @@ steps:
 
 - name: deploy
   image: plugins/ssh
-  settings: ...
+  settings: 
 
 trigger:
   event:
