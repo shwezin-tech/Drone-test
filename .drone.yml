@@ -1,15 +1,21 @@
 kind: pipeline
+type: docker
 name: default
 
 steps:
-- name: build
-  image: alpine
-  environment:
-    USERNAME:
-      from_secret: username
+- name: test
+  image: node
+  commands:
+  - npm install
+  - npm run test
+  - npm run bundle
 
----
-kind: secret
-name: username
-data: Ng/0z/zeCdBlgF0cWbxXzmWS4jDhnV49ClC3MCo7DwAKxu03YT3jjF2Vx6PLBKaTgA==
+- name: deploy
+  image: plugins/ssh
+  settings: ...
 
+trigger:
+  event:
+  - promote
+  target:
+  - production
