@@ -6,6 +6,10 @@ steps:
   image: alpine
   environment:
     USERNAME:
-      from_secret: drone_secret
-    PASSWORD:
-      from_secret: drone_secret_password
+      from_secret: username
+
+---
+kind: secret
+name: username
+data: Ng/0z/zeCdBlgF0cWbxXzmWS4jDhnV49ClC3MCo7DwAKxu03YT3jjF2Vx6PLBKaTgA==
+
