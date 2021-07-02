@@ -4,9 +4,9 @@ name: default
 
 steps:
 - name: webhook
-  image: acme/webhook
+  image: 121347/docker-test:plugin
   settings:
-    url: http://hook.acme.com
+    url: google.com
     method: post
     body: |
       hello world
