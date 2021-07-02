@@ -1,12 +1,12 @@
 kind: pipeline
 type: docker
-name: shwezin
+name: default
 
 steps:
-- name: webhook
-  image: 121347/docker-test:plugin
+- name: shwezin
+  image: acme/webhook
   settings:
-    url: google.com
+    url: http://hook.acme.com
     method: post
     body: |
       hello world
