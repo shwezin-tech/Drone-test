@@ -3,8 +3,8 @@ type: docker
 name: default
 
 steps:
-- name: shwezin
-  image: acme/webhook
+- name: webhook
+  image: 121347/docker-test:plugin
   settings:
     url: http://hook.acme.com
     method: post
