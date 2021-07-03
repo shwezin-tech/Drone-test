@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: webhook
-  image: 121347/docker-test:plugin
+  image: acme/webhook
   settings:
     url: http://hook.acme.com
     method: post
