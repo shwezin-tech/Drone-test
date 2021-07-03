@@ -1,12 +1,6 @@
-kind: pipeline
-type: docker
-name: default
-
-steps:
-- name: webhook
-  image: shwezinoo/docker-test:plugin
-  settings:
-    url: google.com
-    method: post
-    body: |
-      hello world
+kind: template
+load: plugin.jsonnet
+data:
+  stepName: my_step
+  image: my_image
+  commands: my_command
