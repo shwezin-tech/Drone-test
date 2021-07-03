@@ -3,10 +3,8 @@ type: docker
 name: default
 
 steps:
-- name: webhook
-  image: shwezinoo/docker-test:plugin
-  settings:
-    url: google.com
-    method: post
-    body: |
-      hello world
+- name: test
+  image: golang
+  commands:
+  - go build
+  - go test
