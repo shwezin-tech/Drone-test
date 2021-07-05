@@ -1,10 +1,12 @@
 kind: pipeline
 type: docker
 name: default
-
 steps:
 - name: test
-  image: golang
-  commands:
-  - go build
-  - go test
+  image: alpine
+  
+- name: slack-end
+  image: plugins/slack
+  settings:
+    webhook:
+      from_secret: SlackWebhook
