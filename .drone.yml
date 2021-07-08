@@ -1,11 +1,24 @@
----
-kind: pipeline
-type: docker
-name: default
+local Pipeline(version, arch) = {
+  kind: "pipeline",
+  name: "test-on-"+arch,
+  platform: {
+    arch: arch,
+  }
+  steps: [
+    {
+      name: "test",
+      image: "gcc",
+      commands: [
+        "./configure",
+        "make",
+        "make test"
+      ]
+    }
+  ]
+};
 
-steps:
-  - name: lint
-    image: python:3.7-alpine
-    commands:
-      - python -m pip install -r requirements.txt
-      - flake8
+[
+  Pipeline("arm"),
+  Pipeline("arm64"),
+  Pipeline("amd64"),
+]
