@@ -4,7 +4,3 @@ name: default
 steps:
 - name: test
   image: gcc
-  commands:
-  - ./configure
-  - make
-  - make test
