@@ -3,4 +3,6 @@ name: default
 
 steps:
 - name: test
-  image: gcc
+  image: python
+  commands:
+  - pip install -r requirements.txt
