@@ -4,4 +4,4 @@ name: default
 
 steps:
 - name: build
-  image: shwezin
+  image: shwezin-tech/Drone-test
