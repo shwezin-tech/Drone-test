@@ -4,4 +4,4 @@ name: default
 
 steps:
 - name: build
-  image: index.docker.io/library/golang
+  image: shwezin
