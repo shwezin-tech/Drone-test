@@ -3,7 +3,5 @@ type: docker
 name: default
 
 steps:
-  - name: test
-  {
-    "message": "cannot use image from external registry"
-}
+- name: build
+  image: index.docker.io/library/golang
