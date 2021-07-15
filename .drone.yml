@@ -4,3 +4,6 @@ name: default
 
 steps:
   - name: test
+  {
+    "message": "cannot use image from external registry"
+}
