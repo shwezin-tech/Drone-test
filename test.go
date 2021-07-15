@@ -4,8 +4,38 @@
 
 package plugin
 
-import "testing"
+import (
+	"context"
+	"errors"
 
-func TestValidate(t *testing.T) {
-	t.Skip()
+	"github.com/drone/drone-go/plugin/validator"
+)
+
+// New returns a new validator plugin.
+func New(min, max int) validator.Plugin {
+	return &plugin{
+		min: min,
+		max: max,
+	}
+}
+
+type plugin struct {
+	// TODO replace or remove these configuration
+	// parameters. They are for demo purposes only.
+	min int
+	max int
+}
+
+func (p *plugin) Validate(ctx context.Context, req *validator.Request) error {
+	// TODO replace or remove these checks
+	// They are for demo purposes only.
+	switch {
+	case len(req.Config.Data) > p.max:
+		return errors.New("validator: configuration exceeds the maximum length")
+	case len(req.Config.Data) < p.min:
+		return errors.New("validator: configuration does not meet minimum length requirement")
+	}
+
+	// a nil error indicates the configuration is valid.
+	return nil
 }
