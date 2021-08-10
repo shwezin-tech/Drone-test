@@ -1,6 +1,7 @@
+---
 kind: pipeline
 type: docker
-name: python
+name: default
 
 steps:
   - name: lint
@@ -8,4 +9,3 @@ steps:
     commands:
       - python -m pip install -r requirements.txt
       - flake8
-
